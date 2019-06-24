@@ -1,0 +1,1 @@
+cmd /C * siteCreate > res.txt 2>&1 < yes.txt
