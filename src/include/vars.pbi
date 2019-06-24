@@ -42,7 +42,7 @@ Global webaddr$="17SWVnHoujG92yYGSZvCzPgZEpGVfRF8wi"
 
 Global hash$="346671e6ee687e6ba79f8bef4937418c"
 
-Global updateurl$=prefix$+webaddr$+"/downloads/v.zip"
+Global updateurl$=prefix$+webaddr$+"/znfs/downloads/v.zip"
 
 Global noupdates$="You already have the newest version."
 Global updateavailable$="A newer version is available."+Chr(10)+Chr(10)+"Download now?"
