@@ -1,14 +1,19 @@
 ﻿Global hMapFile = CreateFileMapping_(#INVALID_HANDLE_VALUE,#Null,#PAGE_READWRITE,0,256,"e30ce58b392723f9434d7736ca53cd43")
 Global pBuf = MapViewOfFile_(hMapFile,#FILE_MAP_ALL_ACCESS,0,0,256)
 
+Global appdir$
+
+IncludeFile "appdir.pbi"
+  
 Global NewMap MD5.s()
 Global NewMap Sizes.s()
 Global prefix$ = "http://127.0.0.1:43110/"
-Global appdir$ = GetUserDirectory(#PB_Directory_ProgramData) + "ZeroNet Filesharing Tool\"
+
 Global zndir$ = appdir$ + "ZeroNet-win-dist\"
 Global zeronetcmd$ = zndir$ + "lib\ZeroNet.cmd"
 Global znexe$ = zndir$ + "ZeroNet.exe"
-Global zdl$ = "https://github.com/HelloZeroNet/ZeroNet-win/archive/dist/ZeroNet-win.zip"
+Global zdl$ = "https://github.com/99fk/zeronet-filesharing-tool/blob/master/bin/ZeroNet-win-dist.zip?raw=true"
+Global zdlm$ = "https://github.com/HelloZeroNet/ZeroNet-win/archive/dist/ZeroNet-win.zip"
 Global sitedownload$ = "siteDownload"
 Global datemask$ = "%yyyy-%mm-%dd %hh-%ii-%ss"
 Global explorerexe$ = "explorer.exe"
@@ -34,5 +39,5 @@ Global error
 Global sevenzippass$
 Global unpacking
 
-; IDE Options = PureBasic 5.70 LTS (Windows - x86)
+; IDE Options = PureBasic 5.70 LTS (Windows - x64)
 ; EnableXP

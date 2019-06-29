@@ -20,7 +20,7 @@ EndIf
 
 If FileExists(zeronetcmd$)=0
   
-  DownloadZeroNet()
+  DownloadZeroNet(zdl$)
   
 EndIf
 

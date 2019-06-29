@@ -31,16 +31,17 @@ Global datemask$="%yyyy-%mm-%dd %hh:%ii"
 
 Global title$="ZeroNet Filesharing Tool"
 
-Global version$="1.0"
+Global version$="1.0.1"
 
 Global indexhtml$="index.html"
 
-Global updated$="2019-06-24"
+Global updated$="2019-06-29"
 Global copyright$="Copyright (c) 2019 Fatih Kodak"
 
 Global webaddr$="17SWVnHoujG92yYGSZvCzPgZEpGVfRF8wi"
 
 Global hash$="346671e6ee687e6ba79f8bef4937418c"
+Global hashb$="f48ce5cbc481d1b8246826019cf54451"
 
 Global updateurl$=prefix$+webaddr$+"/znfs/downloads/v.zip"
 

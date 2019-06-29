@@ -1,12 +1,20 @@
-﻿Procedure DownloadZeroNet()
- 
-  d$ = appdir$
+﻿Procedure DownloadZeroNet(l$)
   
-  zip$ = d$ + GetFilePart(zdl$)
+  Static t
+  
+  t+1
+  
+If t>2
+  ProcedureReturn
+EndIf
+
+  d$ = appdir$
+     
+  zip$ = d$ + GetFilePart(GetURLPart(l$, #PB_URL_Path))
   
   InitNetwork()
     
-  ReceiveHTTPFile(zdl$,zip$)
+If ReceiveHTTPFile(l$,zip$)
   
 If OpenPack(0, zip$) 
         
@@ -25,8 +33,14 @@ While NextPackEntry(0)
 Wend
   
 EndIf
-    
+
   ClosePack(0)
+  
+EndIf
+
+Else
+  
+  DownloadZeroNet(zdlm$)
   
 EndIf
 

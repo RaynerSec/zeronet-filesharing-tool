@@ -25,7 +25,7 @@ IncludeFile "include\mainb.pbi"
 
 OnErrorCall(@ErrorHandler())
 Main()
-; IDE Options = PureBasic 5.70 LTS (Windows - x86)
+; IDE Options = PureBasic 5.70 LTS (Windows - x64)
 ; EnableThread
 ; EnableXP
 ; UseIcon = ..\bin\icon.ico

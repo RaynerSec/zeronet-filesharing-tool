@@ -1,7 +1,7 @@
 ﻿Procedure Main()
   
   NoAnotherInstance()
-  CreateFiles()
+  CreateFiles(portable)
 
 If IsZeroNetRunning( LCase(zeronetexe$) , zeronetfolder$+zeronetexe$)
   

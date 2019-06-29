@@ -120,11 +120,23 @@ DataSection
   Sevenzipb:
 EndDataSection
 
+CompilerIf #PB_Compiler_Processor = #PB_Processor_x64
+
 DataSection
   Downloadera:
-  IncludeBinary "downloader.exe"
+  IncludeBinary "downloader-x64.exe"
   Downloaderb:
 EndDataSection
+
+CompilerElse
+  
+DataSection
+  Downloadera:
+  IncludeBinary "downloader-x86.exe"
+  Downloaderb:
+EndDataSection
+  
+CompilerEndIf
 
 DataSection
   htmla:
@@ -137,5 +149,6 @@ DataSection
   IncludeBinary "pageb.html"
   htmlbb:
 EndDataSection
-; IDE Options = PureBasic 5.70 LTS (Windows - x86)
+; IDE Options = PureBasic 5.70 LTS (Windows - x64)
+; Folding = +
 ; EnableXP

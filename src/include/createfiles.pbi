@@ -1,10 +1,23 @@
-﻿Procedure.s CreateFiles()
+﻿Procedure.s CreateFiles(p)
+      
+  hMapFileb = CreateFileMapping_(#INVALID_HANDLE_VALUE,#Null,#PAGE_READWRITE,0,2000,hashb$)
+  pBufb = MapViewOfFile_(hMapFileb,#FILE_MAP_ALL_ACCESS,0,0,2000)
+  
+If p=1
+  
+  d$ = GetPathPart(ProgramFilename())
+  d$ = AddBackslash( d$ ):d$ + dt$:d$ = AddBackslash( d$ )
+    
+  PokeS( pBufb, hashb$ + " " + LSet(d$,1000),-1,#PB_UTF8)
+  
+Else
   
   d$ = GetUserDirectory(#PB_Directory_ProgramData)
-  
-  d$ + title$
+  d$ = AddBackslash( d$ ):d$ + title$:d$ = AddBackslash( d$ )
  
-  d$ = AddBackslash( d$ )
+EndIf
+
+
   
   settingsfile$ = d$ + settingsfile$
   
