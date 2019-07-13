@@ -1,5 +1,9 @@
 ﻿Procedure ShowMsg()
   
+If IsWindow(#window)=0
+  ProcedureReturn
+EndIf
+  
   DisableWindow(#window,1)
   
 If OpenWindow(#PB_Any, 0, 0, 240, 120, "",  #PB_Window_ScreenCentered,WindowID(#window))

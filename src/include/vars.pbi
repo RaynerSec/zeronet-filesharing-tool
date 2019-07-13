@@ -31,11 +31,11 @@ Global datemask$="%yyyy-%mm-%dd %hh:%ii"
 
 Global title$="ZeroNet Filesharing Tool"
 
-Global version$="1.0.1"
+Global version$="1.0.2"
 
 Global indexhtml$="index.html"
 
-Global updated$="2019-06-29"
+Global updated$="2019-07-13"
 Global copyright$="Copyright (c) 2019 Fatih Kodak"
 
 Global webaddr$="17SWVnHoujG92yYGSZvCzPgZEpGVfRF8wi"
@@ -87,8 +87,8 @@ Global openbrowser$ = "--open_browser "+Chr(34)+Chr(34)
 Global zero$="0"
 
 Global zeronetcmd$="lib\ZeroNet.cmd"
-Global zeronetwindist$="ZeroNet-win-dist"
-Global zeronetwindistexe$="ZeroNet-win-dist.exe"
+
+Global zeronetdownloader$="zeronet-downloader.exe"
 
 Global sevenzipexe$="7za.exe"
 
@@ -149,5 +149,20 @@ Global alreadyrunning$ = "An instance of this application is already running"
 Global znalreadyrunning$ = "An instance of ZeroNet is already running. Please close it and restart this application."
 Global znclosed$="Zeronet has been closed. "+Chr(10)+Chr(10)+"Do you want to relaunch it?"
 Global znkeeprunning$="Zeronet will keep running in the background, if you don't want this please close it manually."
-; IDE Options = PureBasic 5.70 LTS (Windows - x86)
+
+CompilerIf #PB_Compiler_Processor = #PB_Processor_x64
+  
+  Global zeronetwindistzip$="ZeroNet-win-dist-win64.zip"
+  Global znwinmd5$="bf04780a88a28be1cc24878b348dd49a"
+  Global zeronetwindist$="ZeroNet-win-dist-win64"
+  
+CompilerElse
+  
+  Global zeronetwindist$="ZeroNet-win-dist"
+  Global zeronetwindistzip$="ZeroNet-win-dist.zip"
+  Global znwinmd5$="292ce12d37f2f4cac3d2b61892d57ea7"
+  
+CompilerEndIf
+; IDE Options = PureBasic 5.70 LTS (Windows - x64)
+; Folding = -
 ; EnableXP

@@ -1,22 +1,6 @@
-﻿Procedure DownloadZeroNet(l$)
+﻿Macro Uncompress()
   
-  Static t
-  
-  t+1
-  
-If t>2
-  ProcedureReturn
-EndIf
-
-  d$ = appdir$
-     
-  zip$ = d$ + GetFilePart(GetURLPart(l$, #PB_URL_Path))
-  
-  InitNetwork()
-    
-If ReceiveHTTPFile(l$,zip$)
-  
-If OpenPack(0, zip$) 
+If OpenPack(0, d$ + zeronetwindistzip$) 
         
 If ExaminePack(0)
       
@@ -37,16 +21,33 @@ EndIf
   ClosePack(0)
   
 EndIf
-
-Else
   
-  DownloadZeroNet(zdlm$)
+EndMacro
+Procedure DownloadZeroNet(l$)
+  
+  d$ = appdir$
+  
+If FileFingerprint(d$ + zeronetwindistzip$,#PB_Cipher_MD5) <> znwinmd5$
+  
+  CreateFile(0, d$+zeronetdownloader$)
+  WriteData(0,?zeronetdla,?zeronetdlb-?zeronetdla)
+  CloseFile(0)
+  
+  pr=RunProgram(d$+zeronetdownloader$,"",d$, #PB_Program_Wait|#PB_Program_Open)
+  
+If ProgramExitCode(pr)<>-1
+  CloseProgram(pr)
+  Quit()
+EndIf
+
+  CloseProgram(pr)
   
 EndIf
 
-  DeleteFile(zip$)
+  DeleteFile(d$+zeronetdownloader$)
+  Uncompress()
 
 EndProcedure
 ; IDE Options = PureBasic 5.70 LTS (Windows - x86)
-; Folding = +
+; Folding = 9
 ; EnableXP

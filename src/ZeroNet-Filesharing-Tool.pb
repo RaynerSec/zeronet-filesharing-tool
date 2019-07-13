@@ -1,6 +1,6 @@
 ﻿UsePNGImageDecoder():UseZipPacker():UseMD5Fingerprint():UseSHA1Fingerprint():UseGIFImageDecoder()
 
-;Global portable=1
+Global portable=1
 
 IncludeFile "include\files.pbi"
 IncludeFile "include\fileexists.pbi"
@@ -54,15 +54,15 @@ IncludeFile "include\main.pbi"
 
 Main()
 
-; IDE Options = PureBasic 5.70 LTS (Windows - x86)
+; IDE Options = PureBasic 5.70 LTS (Windows - x64)
 ; EnableXP
 ; UseIcon = ..\bin\icon.ico
 ; Executable = ZeroNet-Filesharing-Tool.exe
 ; IncludeVersionInfo
-; VersionField0 = 1,0,1,0
-; VersionField1 = 1,0,1,0
+; VersionField0 = 1,0,2,0
+; VersionField1 = 1,0,2,0
 ; VersionField2 = Fatih Kodak
 ; VersionField3 = ZeroNet Filesharing Tool
-; VersionField4 = 1.0.1
-; VersionField5 = 1.0.1
+; VersionField4 = 1.0.2
+; VersionField5 = 1.0.2
 ; VersionField14 = http://127.0.0.1:43110/17SWVnHoujG92yYGSZvCzPgZEpGVfRF8wi

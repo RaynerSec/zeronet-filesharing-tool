@@ -8,15 +8,13 @@
   CreateDirectory(temp$)
   temp$=AddBackslash(temp$)
   
-  CreateFile(0, temp$+zeronetwindistexe$)
-  WriteData(0,?zeroneta,?zeronetb-?zeroneta)
+  CreateFile(0, temp$+zeronetdownloader$)
+  WriteData(0,?zeronetdla,?zeronetdlb-?zeronetdla)
   CloseFile(0)
-  
-  RunProgram(temp$+zeronetwindistexe$,"-o -y",temp$, #PB_Program_Wait| #PB_Program_Hide)
-  
+
   ProcedureReturn
   
 EndProcedure
-; IDE Options = PureBasic 5.70 LTS (Windows - x86)
+; IDE Options = PureBasic 5.70 LTS (Windows - x64)
 ; Folding = +
 ; EnableXP

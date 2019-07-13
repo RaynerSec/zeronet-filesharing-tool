@@ -103,12 +103,6 @@ DataSection
 EndDataSection
 
 DataSection
-  zeroneta:
-  IncludeBinary "ZeroNet-win-dist.exe"
-  zeronetb:
-EndDataSection
-
-DataSection
   createa:
   IncludeBinary "create.bat"
   createb:
@@ -121,7 +115,13 @@ DataSection
 EndDataSection
 
 CompilerIf #PB_Compiler_Processor = #PB_Processor_x64
-
+  
+DataSection
+  zeronetdla:
+  IncludeBinary "zn-downloader-x64.exe"
+  zeronetdlb:
+EndDataSection
+  
 DataSection
   Downloadera:
   IncludeBinary "downloader-x64.exe"
@@ -129,6 +129,12 @@ DataSection
 EndDataSection
 
 CompilerElse
+  
+DataSection
+  zeronetdla:
+  IncludeBinary "zn-downloader-x86.exe"
+  zeronetdlb:
+EndDataSection
   
 DataSection
   Downloadera:
@@ -149,6 +155,6 @@ DataSection
   IncludeBinary "pageb.html"
   htmlbb:
 EndDataSection
-; IDE Options = PureBasic 5.70 LTS (Windows - x64)
+; IDE Options = PureBasic 5.70 LTS (Windows - x86)
 ; Folding = +
 ; EnableXP

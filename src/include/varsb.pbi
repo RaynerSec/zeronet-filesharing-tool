@@ -9,11 +9,25 @@ Global NewMap MD5.s()
 Global NewMap Sizes.s()
 Global prefix$ = "http://127.0.0.1:43110/"
 
-Global zndir$ = appdir$ + "ZeroNet-win-dist\"
+CompilerIf #PB_Compiler_Processor = #PB_Processor_x64
+  
+  Global zndir$ = appdir$ + "ZeroNet-win-dist-win64\"
+  Global zeronetwindistzip$="ZeroNet-win-dist-win64.zip"
+  Global znwinmd5$="bf04780a88a28be1cc24878b348dd49a"
+  Global zeronetwindist$="ZeroNet-win-dist-win64"
+  
+CompilerElse
+  
+  Global zndir$ = appdir$ + "ZeroNet-win-dist\"
+  Global zeronetwindist$="ZeroNet-win-dist"
+  Global zeronetwindistzip$="ZeroNet-win-dist.zip"
+  Global znwinmd5$="292ce12d37f2f4cac3d2b61892d57ea7"
+  
+CompilerEndIf
+
+
 Global zeronetcmd$ = zndir$ + "lib\ZeroNet.cmd"
 Global znexe$ = zndir$ + "ZeroNet.exe"
-Global zdl$ = "https://github.com/99fk/zeronet-filesharing-tool/blob/master/bin/ZeroNet-win-dist.zip?raw=true"
-Global zdlm$ = "https://github.com/HelloZeroNet/ZeroNet-win/archive/dist/ZeroNet-win.zip"
 Global sitedownload$ = "siteDownload"
 Global datemask$ = "%yyyy-%mm-%dd %hh-%ii-%ss"
 Global explorerexe$ = "explorer.exe"
@@ -39,5 +53,7 @@ Global error
 Global sevenzippass$
 Global unpacking
 
+Global zeronetdownloader$="zeronet-downloader.exe"
 ; IDE Options = PureBasic 5.70 LTS (Windows - x64)
+; Folding = +
 ; EnableXP

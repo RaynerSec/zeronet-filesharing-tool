@@ -1,5 +1,5 @@
 #define MyAppName "ZeroNet Filesharing Tool"
-#define MyAppVersion "1.0.1"
+#define MyAppVersion "1.0.2"
 #define MyAppPublisher "Fatih Kodak"
 #define MyAppURL "http://127.0.0.1:43110/17SWVnHoujG92yYGSZvCzPgZEpGVfRF8wi"
 #define MyAppExeName "ZeroNet-Filesharing-Tool.exe"
@@ -19,7 +19,9 @@ AllowNoIcons=yes
 LicenseFile=..\LICENSE
 OutputBaseFilename=ZeroNet-Filesharing-Tool-(Installer)
 PrivilegesRequired=admin
-VersionInfoVersion=1.0.1.0
+Compression=lzma
+SolidCompression=yes
+VersionInfoVersion=1.0.2.0
 ArchitecturesInstallIn64BitMode=x64
 
 [Languages]
